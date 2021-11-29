@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const swaggerUI = require('swagger-ui-express');
 const db = require('../models');
@@ -26,7 +25,6 @@ class Server {
     this.middlewares();
 
     // Body parser
-    this.app.use(morgan('dev'));
     this.app.use(express.json());
     this.app.use(bodyParser.urlencoded({ extended: false }));
     this.app.use(bodyParser.json());

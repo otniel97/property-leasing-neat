@@ -9,7 +9,7 @@ const { validateJobExpirationDate } = require('../utils/validations');
 // ================================================
 // Invoive contracts
 // ================================================
-const invoiceContracts = schedule.scheduleJob('1 0 * * *', async() => {
+const invoiceContracts = schedule.scheduleJob('30 19 * * *', async() => {
   console.log('**START CRONJOB -- INVOICE CONTRACTS**');
   const contracts = await Contract.findAll({
     where: { status: true },
