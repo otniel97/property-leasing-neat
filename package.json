@@ -1,0 +1,46 @@
+{
+    "name": "property-leasing-neat",
+    "version": "1.0.0",
+    "description": "property-leasing-neat",
+    "main": "app.js",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=development nodemon ./src/app.js",
+        "start": "NODE_ENV=production node ./src/app.js",
+        "database": "npx sequelize db:drop && npx sequelize db:create && npx sequelize db:migrate && npx sequelize db:seed:all",
+        "create-db": "npx sequelize db:create",
+        "migrate-db": "npx sequelize db:migrate",
+        "drop-db": "npx sequelize db:drop",
+        "seed-db": "npx sequelize db:seed:all",
+        "seed-drop": "npx sequelize db:seed:undo:all"
+    },
+    "author": "otniel97",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/cli": "^7.11.6",
+        "@babel/core": "^7.11.6",
+        "@babel/node": "^7.10.5",
+        "@babel/polyfill": "^7.11.5",
+        "@babel/preset-env": "^7.11.5",
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "node-schedule": "^2.0.0",
+        "pg": "^8.7.1",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.12.0-alpha.1",
+        "sequelize-cli": "^6.3.0",
+        "swagger-ui-express": "^4.1.6"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "eslint": "^7.31.0",
+        "eslint-config-google": "^0.14.0",
+        "jest": "^27.0.6",
+        "morgan": "^1.10.0",
+        "supertest": "^6.1.4"
+    }
+}
