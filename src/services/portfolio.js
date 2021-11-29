@@ -263,7 +263,9 @@ async function noPaymentPercentByPortfolioId(req, res) {
       }],
     });
 
-    return successMsg(res, 200, 'correcto', { noPaymentPercent: totalPaidInvoices/totalInvoices*100 });
+    const noPaymentPercent = totalPaidInvoices && totalInvoices?totalPaidInvoices/totalInvoices*100 : 0;
+
+    return successMsg(res, 200, 'correcto', { noPaymentPercent });
   } catch (error) {
     return errorMsg(res, 500, `lo sentimos hemos cometido un error!`, error);
 
